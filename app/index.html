@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Tutplus Backbone</title>
+	<!-- libs -->
+	<link rel="stylesheet" href="./js/libs/bootstrap/dist/css/bootstrap.min.css">
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div class="container">
+		<h1>My task</h1>
+
+		<form action="" id="addTask" class="row">
+			<div class="form-group col-sm-4">
+				<input class="form-control" type="text" placeholder="Your New Task">
+			</div><!-- ./ row -->
+			<input type="submit" class="btn btn-primary" value="Add Task">
+		</form><!-- ./ form -->
+
+		<table class="table table-striped tasks">
+			<script type="text/template" id="taskTemplate">
+				<td class="title"><%= title %></td>
+				<td><button class="btn btn-primary edit">Edit</button></td>
+				<td><button class="btn btn-danger delete">delete</button></td>
+				<td><button class="btn btn-success update hide">update</button></td>
+				<td><button class="btn btn-danger cancel hide">cancel</button></td>
+			</script><!-- ./ taskTemplate -->
+		</table><!-- ./ table -->
+	</div><!-- ./ container -->
+	
+	<!-- libs -->
+	<script src="./js/libs/jquery/dist/jquery.min.js"></script>
+	<script src="./js/libs/underscore/underscore.js"></script>
+	<script src="./js/libs/backbone/backbone.js"></script>
+	<script src="./js/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+
+	<!-- libs -->
+	<script src="./js/models/taskModel.js"></script>
+	<script src="./js/collections/tasksCollections.js"></script>
+	<script src="./js/views/singleTask.js"></script>
+	<script src="./js/views/addTask.js"></script>
+	<script src="./js/views/tasksViews.js"></script>
+	<script src="./js/app.js"></script>
+</body>
+</html>
