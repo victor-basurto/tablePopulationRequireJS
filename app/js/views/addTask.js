@@ -1,25 +1,30 @@
-var app = app || {};
-/**
-* AddTask View
-*/
-app.AddTaskView = Backbone.View.extend({
-	el: '#addTask',
+define([ 
+	'jquery', 
+	'underscore', 
+	'backbone', 
+	'models/taskModel',
+	'collections/tasksCollections'
+], function( $, _, Backbone, Task, TasksCollections ) {
+	'use strict';
 
-	events: {
-		'submit': 'submit'
-	},
+	var AddTaskView = Backbone.View.extend({
+		el: '#addTask',
 
-	initialize: function() {
+		events: {
+			'submit': 'submit'
+		},
 
-	},
+		initialize: function() {},
 
-	submit: function( e ) {
-		e.preventDefault();
-		
-		var newTaskTitle = $( e.currentTarget ).find( 'input[type="text"]' ).val();
+		submit: function( e ) {
+			e.preventDefault();
+			
+			var newTaskTitle = $( e.currentTarget ).find( 'input[type="text"]' ).val();
 
-		var task = new app.Task({ title: newTaskTitle });
-		console.log(task);
-		this.collection.add( task );
-	}
+			var task = new Task({ title: newTaskTitle });
+			console.log( task );
+			this.collection.add( task );
+		}
+	});
+	return AddTaskView;
 });
