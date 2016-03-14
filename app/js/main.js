@@ -20,7 +20,12 @@ require.config({
 	}
 });
 
-require([ 'backbone', 'views/tasksViews', 'views/addTask' ], function( Backbone, TasksViews, AddTaskView ) {
+require([ 
+	'backbone', 
+	'views/tasksViews', 
+	'views/addTask', 
+	'collections/tasksCollections' 
+], function( Backbone, TasksViews, AddTaskView, TasksCollections ) {
 	'use strict';
 	
 	// collection instance with new values

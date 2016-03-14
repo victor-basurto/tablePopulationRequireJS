@@ -4,5 +4,5 @@ define([ 'underscore', 'backbone', 'models/taskModel' ], function( _, Backbone, 
 	var TasksCollections = Backbone.Collection.extend({
 		model: Task
 	});
-	return new TasksCollections();
+	return TasksCollections;
 });
