@@ -49,7 +49,7 @@ define([
 		},
 
 		updateTask: function() {
-			$updatedTitle = $( '.title-update' ).val();
+			var $updatedTitle = $( '.title-update' ).val();
 			if ( !$updatedTitle.trim() ) {
 				alert('enter a title');
 			} else {

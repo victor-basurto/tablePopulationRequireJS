@@ -22,7 +22,7 @@ define([
 			var newTaskTitle = $( e.currentTarget ).find( 'input[type="text"]' ).val();
 
 			var task = new Task({ title: newTaskTitle });
-			this.TasksCollections.add( task );
+			this.collection.add( task );
 		}
 	});
 	return AddTaskView;
