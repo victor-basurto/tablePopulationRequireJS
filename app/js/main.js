@@ -20,20 +20,15 @@ require.config({
 	}
 });
 
-require([ 
+require([
+	'jquery',
 	'backbone', 
+	'collections/tasksCollections' ,
 	'views/tasksViews', 
-	'views/addTask', 
-	'collections/tasksCollections' 
-], function( Backbone, TasksViews, AddTaskView, TasksCollections ) {
+	'views/addTask'
+], function( $, Backbone, TasksCollections, TasksViews, AddTaskView ) {
 	'use strict';
 	
-	// collection instance with new values
-	var addTask = new AddTaskView({ collection: tasksCollection });
-
-	// collection instance
-	var taskView = new TasksViews({ collection: tasksCollection });
-
 	// initialize app with some values
 	var tasksCollection = new TasksCollections([{
 		title: 'go to downtown',
@@ -48,6 +43,12 @@ require([
 		title: 'go ninja go ninja go',
 		priority: 2
 	}]);
+
+	// collection instance with new values
+	var addTask = new AddTaskView({ collection: tasksCollection });
+
+	// collection instance
+	var taskView = new TasksViews({ collection: tasksCollection });
 
 	$( '.tasks' ).append( taskView.render().el );
 });

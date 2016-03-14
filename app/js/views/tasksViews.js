@@ -2,9 +2,10 @@ define([
 	'jquery', 
 	'underscore', 
 	'backbone', 
-	'collections/tasksCollections', 
+	'collections/tasksCollections',
+	'models/taskModel',
 	'views/singleTask'
-], function( $, _, Backbone, TasksCollections, TaskView ) {
+], function( $, _, Backbone, TasksCollections, Task, TaskView ) {
 	'use strict';
 
 	var TasksViews = Backbone.View.extend({

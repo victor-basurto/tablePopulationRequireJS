@@ -2,9 +2,8 @@ define([
 	'jquery', 
 	'underscore', 
 	'backbone', 
-	'models/taskModel', 
-	'collections/tasksCollections' 
-], function( $, _, Backbone, Task, TasksCollections ) {
+	'models/taskModel'
+], function( $, _, Backbone, Task ) {
 	'use strict';
 
 	/**
